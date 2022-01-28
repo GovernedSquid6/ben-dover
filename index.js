@@ -2,11 +2,11 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 client.on('ready', () => {
-  console.log(`Logged in...`);
+  console.log(`Rise and shine`);
 });
 
 client.on('message', msg => {
-  msg.reply('pong');
+  msg.reply('pp');
 });
 
-client.login('token');
+client.login(process.env.token);
