@@ -1,8 +1,6 @@
 {
-  "name": "Start on Heroku: Node.js",
-  "description": "A barebones Node.js app using Express 4",
-  "repository": "https://github.com/heroku/node-js-getting-started",
-  "logo": "https://cdn.rawgit.com/heroku/node-js-getting-started/main/public/node.svg",
+  "name": "Ben Dover",
+  "description": "Hehe",
+  "repository": "https://github.com/GovernedSquid6/ben-dover",
   "keywords": ["node", "express", "heroku"],
-  "image": "heroku/nodejs"
 }
