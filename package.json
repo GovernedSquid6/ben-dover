@@ -1,14 +1,13 @@
 {
   "name": "ben-dover",
-  "version": "50.0.0",
+  "version": "5.0.0",
   "description": "Hehe",
   "engines": {
     "node": "14.x"
   },
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "test": "node test.js"
+    "start": "node index.js"
   },
   "dependencies": {
     "ejs": "^3.1.5",
