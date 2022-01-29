@@ -8,12 +8,12 @@ client.on('ready', () => {
 });
 
 client.on('messageCreate', async message => {
-  const args = message.content.slice(prefix.length).trim().split(' ');
+  const args = message.content.trim().split(/ +/g);
   const command = args.shift().toLowerCase();
   if(message.author.bot) return
   if(command == "test") message.reply('pp');
   if(command == "bensay") {
-    await message.channel.send(args.join())
+    await message.channel.send(args.join(" "))
     message.delete()
   }
 });
