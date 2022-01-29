@@ -7,9 +7,9 @@ client.on('ready', () => {
 	console.log('Rise and shine!');
 });
 
-client.on('message', msg => {
-  if(msg.author.bot) return
-  msg.reply('pp');
+client.on('message', message => {
+  if(message.author.bot) return
+  if (message.content == "test") message.reply('pp');
 });
 
 client.login(process.env.token);
