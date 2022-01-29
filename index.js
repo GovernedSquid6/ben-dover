@@ -7,13 +7,13 @@ client.on('ready', () => {
   console.log('Rise and shine!');
 });
 
-client.on('messageCreate', message => {
+client.on('messageCreate', async message => {
   const args = message.content.slice(prefix.length).trim().split(' ');
   const command = args.shift().toLowerCase();
   if(message.author.bot) return
   if(command == "test") message.reply('pp');
   if(command == "bensay") {
-    message.channel.send(args.join())
+    await message.channel.send(args.join())
     message.delete()
   }
 });
