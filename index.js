@@ -24,18 +24,21 @@ client.on('messageCreate', async message => {
   }
   if(command == "makesay") {
     var vic
+    var nem
     var vectim = args[0]
     var guildmems = await message.guild.members.fetch()
     
     if (guildmems.has(vectim)) {
       vic = await message.guild.members.fetch(vectim)
+      nem = vic.displayName
     }
     else {
       vic = await client.users.fetch(vectim)
+      nem = vic.username
     }
     var content = args.slice(1).join(" ")
     await message.delete()
-    var webh = await message.channel.createWebhook((vic.displayName | vic.username), {
+    var webh = await message.channel.createWebhook((nem), {
       avatar: vic.displayAvatarURL(),
     })
       .then(console.log)
