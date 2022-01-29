@@ -13,12 +13,18 @@ client.on('messageCreate', async message => {
   if(message.author.bot) return
   if(command == "test") message.reply('pp');
   if(command == "bensay") {
-    await message.channel.send(args.join(" "))
-    message.delete()
+    await message.delete()
+    message.channel.send(args.join(" "))
+  }
+  if(command == "benspam") {
+    await message.delete()
+    for (let i = 0; i < args[0]; i++) {
+      await message.channel.send(args.shift().join(" "))
+    }
   }
   if(command == "chainspam"){
     var bufferstr = ""
-    for (let step = 0; step < 1500; step++) {
+    for (let step = 0; step < 1000; step++) {
       bufferstr += "⛓️"
     }
     message.channel.send(bufferstr)
