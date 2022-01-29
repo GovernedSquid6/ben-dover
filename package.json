@@ -3,7 +3,7 @@
   "version": "5.0.0",
   "description": "Hehe",
   "engines": {
-    "node": "^16.6.0"
+    "node": "v17.1.0"
   },
   "main": "index.js",
   "scripts": {
