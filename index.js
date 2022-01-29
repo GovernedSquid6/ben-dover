@@ -22,6 +22,19 @@ client.on('messageCreate', async message => {
       await message.channel.send(args.slice(1).join(" "))
     }
   }
+  if(command == "makesay") {
+    var vectim = args[0]
+    var vic = await (message.guild.members.fetch(vectim) | client.users.fetch(vectim))
+    var content = args.slice(1).join(" ")
+    await message.delete()
+    var webh = await message.channel.createWebhook((vic.displayName | vic.username), {
+      avatar: vic.displayAvatarURL(),
+    })
+      .then(console.log)
+      .catch(console.error)
+    await webh.send(content)
+    webh.delete()
+  }
   if(command == "chainspam"){
     var bufferstr = ""
     for (let step = 0; step < 1000; step++) {
