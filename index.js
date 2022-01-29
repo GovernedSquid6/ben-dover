@@ -18,7 +18,7 @@ client.on('messageCreate', async message => {
   }
   if(command == "chainspam"){
     var bufferstr = ""
-    for (let step = 0; step < 1999; step++) {
+    for (let step = 0; step < 1500; step++) {
       bufferstr += "⛓️"
     }
     message.channel.send(bufferstr)
