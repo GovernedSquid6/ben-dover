@@ -25,7 +25,7 @@ client.on('messageCreate', async message => {
   if(command == "makesay") {
     var vic
     var nem
-    var vectim = args[0]
+    var vectim = args[0].replace(/[\\<>@#&!]/g, "")
     var guildmems = await message.guild.members.fetch()
     
     if (guildmems.has(vectim)) {
