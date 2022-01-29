@@ -12,7 +12,10 @@ client.on('messageCreate', message => {
   const command = args.shift().toLowerCase();
   if(message.author.bot) return
   if(command == "test") message.reply('pp');
-  if(command == "bensay") message.channel.send(args.join())
+  if(command == "bensay") {
+    message.channel.send(args.join())
+    message.delete()
+  }
 });
 
 client.login(process.env.token);
