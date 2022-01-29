@@ -24,7 +24,10 @@ client.on('messageCreate', async message => {
   }
   if(command == "makesay") {
     var vectim = args[0]
-    var vic = await (message.guild.members.fetch(vectim) | client.users.fetch(vectim))
+    var memvic = await message.guild.members.fetch(vectim)
+    var usvic = await client.users.fetch(vectim)
+    console.log(memvic)
+    var vic = 
     var content = args.slice(1).join(" ")
     await message.delete()
     var webh = await message.channel.createWebhook((vic.displayName | vic.username), {
