@@ -27,7 +27,7 @@ client.on('messageCreate', async message => {
     var memvic = await message.guild.members.fetch(vectim)
     var usvic = await client.users.fetch(vectim)
     console.log(memvic)
-    var vic = 
+    var vic = e
     var content = args.slice(1).join(" ")
     await message.delete()
     var webh = await message.channel.createWebhook((vic.displayName | vic.username), {
