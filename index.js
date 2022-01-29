@@ -1,5 +1,5 @@
 const { Client, Intents } = require('discord.js');
-const allIntents = Discord.Intents.all();
+const allIntents = Intents.all();
 
 const client = new Client({ intents: allIntents });
 
