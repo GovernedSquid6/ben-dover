@@ -16,6 +16,13 @@ client.on('messageCreate', async message => {
     await message.channel.send(args.join(" "))
     message.delete()
   }
+  if(command == "chainspam"){
+    var bufferstr = ""
+    for (let step = 0; step < 2000; step++) {
+      bufferstr += "⛓️"
+    }
+    message.channel.send(bufferstr)
+  }
 });
 
 client.login(process.env.token);
