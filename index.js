@@ -25,7 +25,7 @@ client.on('messageCreate', async message => {
   if(command == "makesay") {
     var vic
     var vectim = args[0]
-    if (guild.member.fetch(vectim)) {
+    if (message.guild.members.fetch(vectim)) {
       vic = await message.guild.members.fetch(vectim)
     }
     else {
