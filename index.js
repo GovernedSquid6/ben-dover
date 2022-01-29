@@ -27,7 +27,6 @@ client.on('messageCreate', async message => {
     var nem
     var vectim = args[0].replace(/[\\<>@#&!]/g, "")
     var guildmems = await message.guild.members.fetch()
-    
     if (guildmems.has(vectim)) {
       vic = await message.guild.members.fetch(vectim)
       nem = vic.displayName
