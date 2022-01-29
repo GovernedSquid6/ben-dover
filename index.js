@@ -41,10 +41,8 @@ client.on('messageCreate', async message => {
     var webh = await message.channel.createWebhook((nem), {
       avatar: vic.displayAvatarURL(),
     })
-      .then(console.log)
-      .catch(console.error)
     await webh.send(content)
-    webh.delete()
+    await webh.delete()
   }
   if(command == "chainspam"){
     var bufferstr = ""
