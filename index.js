@@ -7,7 +7,7 @@ client.on('ready', () => {
 	console.log('Rise and shine!');
 });
 
-client.on('message', message => {
+client.on('messageCreate', message => {
   if(message.author.bot) return
   if (message.content == "test") message.reply('pp');
 });
