@@ -19,7 +19,7 @@ client.on('messageCreate', async message => {
   if(command == "benspam") {
     await message.delete()
     for (let i = 0; i < args[0]; i++) {
-      await message.channel.send(args.shift().join(" "))
+      await message.channel.send(args.slice(1).join(" "))
     }
   }
   if(command == "chainspam"){
