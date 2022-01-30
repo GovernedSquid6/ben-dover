@@ -18,7 +18,9 @@ client.on('messageCreate', async message => {
     message.channel.send(args.join(" "))
   }
   if(command == "getpfp") {
-    var vic = await client.users.fetch(args[0].replace(/[\\<>@#&!]/g, ""))
+    var vic
+    if(args.length == 0) vic = message.author
+    else vic = await client.users.fetch(args[0].replace(/[\\<>@#&!]/g, ""))
     var pfp = await vic.displayAvatarURL({dynamic: true, format: 'png', size: 4096})
     message.channel.send(pfp)
   }
