@@ -12,16 +12,20 @@ var owner = "850097464123326515"
 
 client.on('ready', async () => {
   console.log('Rise and shine!');
-  
-  const command = new SlashCommandBuilder()
-	.setName('bensay')
-	.setDescription('Make Ben say something')
-	.addStringOption(option => option.setName('phrase').setDescription('What you want Ben to say').setRequired(true))
-  const rawData = await command.toJSON();
+  const commands = [];
+  const data = new SlashCommandBuilder()
+    .setName('bensay')
+    .setDescription('Make ben say something')
+    .addStringOption(option =>
+      option.setName('phrase')
+      .setDescription('What to make Ben say')
+      .setRequired(true));
+  const rawData = await data.toJSON();
+  commands.push(rawData)
   console.log(rawData)
   await rest.put(
-	  Routes.applicationCommands(client.user.id),
-	  { body: rawData },
+    Routes.applicationCommands(client.user.id),
+    { body: commands },
   );
 });
 
