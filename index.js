@@ -69,11 +69,12 @@ client.on('messageCreate', async message => {
 });
 
 client.on('interactionCreate', async interaction => {
-	if (!interaction.isCommand()) return;
+  if (!interaction.isCommand()) return;
   console.log(interaction)
-	if (interaction.commandName === 'bensay') {
-		await interaction.reply({ content: 'k', ephemeral: true });
-    message.channel.send(interaction.options.getString('phrase'))
-	}
+  if (interaction.commandName === 'bensay') {
+    var channel = await client.channels.fetch(interaction.channelId)
+    await interaction.reply({ content: 'k', ephemeral: true });
+    channel.send(interaction.options.getString('phrase'))
+  }
 });
 client.login(process.env.token);
