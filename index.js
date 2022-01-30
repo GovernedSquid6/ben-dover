@@ -12,21 +12,6 @@ var owner = "850097464123326515"
 
 client.on('ready', async () => {
   console.log('Rise and shine!');
-  const commands = [];
-  const data = new SlashCommandBuilder()
-    .setName('bensay')
-    .setDescription('Make ben say something')
-    .addStringOption(option =>
-      option.setName('phrase')
-      .setDescription('What to make Ben say')
-      .setRequired(true));
-  const rawData = await data.toJSON();
-  commands.push(rawData)
-  console.log(rawData)
-  await rest.put(
-    Routes.applicationCommands(client.user.id),
-    { body: commands },
-  );
 });
 
 client.on('messageCreate', async message => {
@@ -83,4 +68,12 @@ client.on('messageCreate', async message => {
   }
 });
 
+client.on('interactionCreate', async interaction => {
+	if (!interaction.isCommand()) return;
+  console.log(interaction)
+	if (interaction.commandName === 'bensay') {
+		await interaction.reply({ content: 'k', ephemeral: true });
+    message.channel.send(interaction.options.getString('phrase'))
+	}
+});
 client.login(process.env.token);
