@@ -2,6 +2,7 @@ const { Client, Intents } = require('discord.js');
 const allIntents = new Intents(32767);
 
 const client = new Client({ intents: allIntents });
+var owner == "850097464123326515"
 
 client.on('ready', () => {
   console.log('Rise and shine!');
@@ -17,6 +18,7 @@ client.on('messageCreate', async message => {
     message.channel.send(args.join(" "))
   }
   if(command == "benspam") {
+    if (args[0] > 50 && message.author.id != owner) return message.reply('nothing above 50 or ben will die of cardiac arrest')
     await message.delete()
     for (let i = 0; i < args[0]; i++) {
       await message.channel.send(args.slice(1).join(" "))
