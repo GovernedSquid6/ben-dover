@@ -2,10 +2,26 @@ const { Client, Intents } = require('discord.js');
 const allIntents = new Intents(32767);
 
 const client = new Client({ intents: allIntents });
+const { REST } = require('@discordjs/rest');
+const { Routes } = require('discord-api-types/v9');
+const { SlashCommandBuilder } = require('@discordjs/builders');
+
+const rest = new REST({ version: '9' }).setToken(process.env.token);
+
 var owner = "850097464123326515"
 
 client.on('ready', () => {
   console.log('Rise and shine!');
+  
+  const command = new SlashCommandBuilder()
+	.setName('bensay')
+	.setDescription('Make Ben say something')
+	.addStringOption(option => option.setName('phrase').setDescription('What to make Ben say'));
+  const rawData = command.toJSON();
+  await rest.put(
+	  Routes.applicationCommands(client.user.id),
+	  { body: rawData },
+  );
 });
 
 client.on('messageCreate', async message => {
