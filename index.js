@@ -17,6 +17,11 @@ client.on('messageCreate', async message => {
     await message.delete()
     message.channel.send(args.join(" "))
   }
+  if(command == "getpfp") {
+    var vic = await client.users.fetch(args[0].replace(/[\\<>@#&!]/g, ""))
+    var pfp = await vic.displayAvatarURL([dynamic: true, format: 'png', size: 4096])
+    message.channel.send(pfp)
+  }
   if(command == "benspam") {
     if (args[0] > 50 && message.author.id != owner) return message.reply('nothing above 50 or ben will die of cardiac arrest')
     await message.delete()
