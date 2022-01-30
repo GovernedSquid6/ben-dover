@@ -10,7 +10,7 @@ const rest = new REST({ version: '9' }).setToken(process.env.token);
 
 var owner = "850097464123326515"
 
-client.on('ready', () => {
+client.on('ready', async () => {
   console.log('Rise and shine!');
   
   const command = new SlashCommandBuilder()
