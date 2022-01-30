@@ -45,7 +45,7 @@ client.on('messageCreate', async message => {
     var content = args.slice(1).join(" ")
     await message.delete()
     var webh = await message.channel.createWebhook((nem), {
-      avatar: vic.displayAvatarURL(),
+      avatar: vic.displayAvatarURL({dynamic: true, format: 'png', size: 4096}),
     })
     await webh.send(content)
     await webh.delete()
