@@ -16,8 +16,8 @@ client.on('ready', async () => {
   const command = new SlashCommandBuilder()
 	.setName('bensay')
 	.setDescription('Make Ben say something')
-	.addStringOption(option => option.setName('phrase').setDescription('What to make Ben say'));
-  const rawData = command.toJSON();
+	.addStringOption(option => option.setName('phrase').setDescription('What you want Ben to say').setRequired(true))
+  const rawData = await command.toJSON();
   console.log(rawData)
   await rest.put(
 	  Routes.applicationCommands(client.user.id),
