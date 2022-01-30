@@ -19,7 +19,7 @@ client.on('messageCreate', async message => {
   }
   if(command == "getpfp") {
     var vic = await client.users.fetch(args[0].replace(/[\\<>@#&!]/g, ""))
-    var pfp = await vic.displayAvatarURL([dynamic: true, format: 'png', size: 4096])
+    var pfp = await vic.displayAvatarURL({dynamic: true, format: 'png', size: 4096})
     message.channel.send(pfp)
   }
   if(command == "benspam") {
