@@ -17,8 +17,8 @@ client.on('ready', async () => {
 	.setName('bensay')
 	.setDescription('Make Ben say something')
 	.addStringOption(option => option.setName('phrase').setDescription('What to make Ben say'));
-  console.log(command)
   const rawData = command.toJSON();
+  console.log(rawData)
   await rest.put(
 	  Routes.applicationCommands(client.user.id),
 	  { body: rawData },
