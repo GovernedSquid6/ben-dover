@@ -91,8 +91,16 @@ client.on('messageCreate', async message => {
   }
   if(command == "chainspam"){
     var bufferstr = ""
-    for (let step = 0; step < 1000; step++) {
-      bufferstr += "⛓️"
+    for (let step = 0; step < 2000; step++) {
+      bufferstr += "⛓"
+    }
+    message.channel.send(bufferstr)
+  }
+  if(command == "randomshit") {
+    var bufferstr = ""
+    for (let step = 0; step < 2000; step++) {
+      var item = symbols[Math.floor(Math.random()*symbols.length)];
+      bufferstr += item
     }
     message.channel.send(bufferstr)
   }
