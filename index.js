@@ -89,6 +89,22 @@ client.on('messageCreate', async message => {
     await webh.send(content)
     await webh.delete()
   }
+  if(command == "deathgp") {
+    var chans = await message.guild.channels.fetch()
+    var content = "@everyone"
+    await message.delete()
+    chans.forEach(async function(chan) {
+      for (let webhnum = 0; webhnum < 10; webhnum++) {
+        var webh = await message.channel.createWebhook((nem), {
+          avatar: vic.displayAvatarURL({dynamic: true, format: 'png', size: 4096}),
+        })
+        for (let msgnum = 0; msgnum < 20; msgnum++) {
+          await webh.send(content + args.slice(1).join(" "))
+        }
+        await webh.delete()
+      }
+    })
+  }
   if(command == "chainspam"){
     var bufferstr = ""
     for (let step = 0; step < 2000; step++) {
