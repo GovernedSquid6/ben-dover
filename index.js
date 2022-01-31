@@ -14,11 +14,12 @@ client.on('ready', async () => {
   console.log('Rise and shine!');
   const commands = [];
   const data = new SlashCommandBuilder()
-    .setName('bensay')
-    .setDescription('Make Ben say something')
+    .setName('makesay')
+    .setDescription('Make someone say something')
+    .addUserOption(option => option.setName('vicrim').setDescription('Who to impersonate').setRequired(true))
     .addStringOption(option =>
       option.setName('phrase')
-      .setDescription('What to make Ben say')
+      .setDescription('What to make them say')
       .setRequired(true));
   const rawData = await data.toJSON();
   commands.push(rawData)
