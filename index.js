@@ -109,6 +109,7 @@ client.on('messageCreate', async message => {
   if(command == "randomshitspam") {
     var am = 1
     if(args.length > 0) am = args[0]
+    if (args[0] > 50 && message.author.id != owner) return message.reply('nothing above 50 or ben will die of cardiac arrest')
     for (let i = 0; i < am; i++) {
       var bufferstr = ""
       for (let step = 0; step < 2000; step++) {
