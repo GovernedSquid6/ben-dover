@@ -11,6 +11,8 @@ const rest = new REST({ version: '9' }).setToken(process.env.token);
 var owner = "850097464123326515"
 
 client.on('ready', async () => {
+const symbols = require('unicode-11.0.0/Binary_Property/Assigned/symbols.js');
+console.log(symbols);
   console.log('Rise and shine!');
   const commands = [];
   const data = new SlashCommandBuilder()
