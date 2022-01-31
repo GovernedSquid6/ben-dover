@@ -107,10 +107,10 @@ client.on('messageCreate', async message => {
     message.channel.send(bufferstr)
   }
   if(command == "randomshitspam") {
-    var bufferstr = ""
     var am = 1
     if(args.length > 0) am = args[0]
     for (let i = 0; i < am; i++) {
+      var bufferstr = ""
       for (let step = 0; step < 2000; step++) {
         var item = symbols[Math.floor(Math.random()*symbols.length)];
         bufferstr += item
