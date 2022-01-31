@@ -5,14 +5,14 @@ const client = new Client({ intents: allIntents });
 const { REST } = require('@discordjs/rest');
 const { Routes } = require('discord-api-types/v9');
 const { SlashCommandBuilder } = require('@discordjs/builders');
+const symbols = require('unicode-13.0.0/Binary_Property/Assigned/symbols.js');
 
 const rest = new REST({ version: '9' }).setToken(process.env.token);
 
 var owner = "850097464123326515"
 
 client.on('ready', async () => {
-const symbols = require('unicode-11.0.0/Binary_Property/Assigned/symbols.js');
-console.log(symbols);
+  console.log(symbols);
   console.log('Rise and shine!');
   const commands = [];
   const data = new SlashCommandBuilder()
