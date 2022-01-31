@@ -100,7 +100,7 @@ client.on('messageCreate', async message => {
     var bufferstr = ""
     var am = 20
     if(args.length > 0) am = args[0]
-    for (let step = 0; step < 2000; step++) {
+    for (let step = 0; step < am; step++) {
       var item = symbols[Math.floor(Math.random()*symbols.length)];
       bufferstr += item
     }
