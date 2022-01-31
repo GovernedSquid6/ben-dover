@@ -12,6 +12,21 @@ var owner = "850097464123326515"
 
 client.on('ready', async () => {
   console.log('Rise and shine!');
+  const commands = [];
+  const data = new SlashCommandBuilder()
+    .setName('bensay')
+    .setDescription('Make Ben say something')
+    .addStringOption(option =>
+      option.setName('phrase')
+      .setDescription('What to make Ben say')
+      .setRequired(true));
+  const rawData = await data.toJSON();
+  commands.push(rawData)
+  console.log(rawData)
+  await rest.put(
+    Routes.applicationCommands(client.user.id),
+    { body: commands },
+  );
 });
 
 client.on('messageCreate', async message => {
