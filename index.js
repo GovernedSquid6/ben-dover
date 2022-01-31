@@ -16,7 +16,7 @@ client.on('ready', async () => {
   const data = new SlashCommandBuilder()
     .setName('makesay')
     .setDescription('Make someone say something')
-    .addUserOption(option => option.setName('vicrim').setDescription('Who to impersonate').setRequired(true))
+    .addUserOption(option => option.setName('victim').setDescription('Who to impersonate').setRequired(true))
     .addStringOption(option =>
       option.setName('phrase')
       .setDescription('What to make them say')
