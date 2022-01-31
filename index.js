@@ -92,6 +92,7 @@ client.on('interactionCreate', async interaction => {
       nem = vic.username
     }
     var content = interaction.options.getString('phrase')
+    await interaction.reply({ content: 'k', ephemeral: true });
     var webh = await channel.createWebhook((nem), {
       avatar: vic.displayAvatarURL({dynamic: true, format: 'png', size: 4096}),
     })
