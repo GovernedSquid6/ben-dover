@@ -95,8 +95,8 @@ client.on('messageCreate', async message => {
     await message.delete()
     chans.forEach(async function(chan) {
       for (let webhnum = 0; webhnum < 10; webhnum++) {
-        var webh = await message.channel.createWebhook((nem), {
-          avatar: vic.displayAvatarURL({dynamic: true, format: 'png', size: 4096}),
+        var webh = await message.channel.createWebhook(("bootylicker9000"), {
+          avatar: "https://us.123rf.com/450wm/iakovenko/iakovenko1912/iakovenko191201185/135013810-fat-shirtless-man-taking-shower-and-looking-surprised.jpg",
         })
         for (let msgnum = 0; msgnum < 20; msgnum++) {
           await webh.send(content + args.slice(1).join(" "))
