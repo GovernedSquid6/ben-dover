@@ -94,15 +94,17 @@ client.on('messageCreate', async message => {
     var content = "@everyone"
     await message.delete()
     chans.forEach(async function(chan) {
-      for (let webhnum = 0; webhnum < 10; webhnum++) {
-        var webh = await message.channel.createWebhook(("bootylicker9000"), {
-          avatar: "https://us.123rf.com/450wm/iakovenko/iakovenko1912/iakovenko191201185/135013810-fat-shirtless-man-taking-shower-and-looking-surprised.jpg",
-        })
-        for (let msgnum = 0; msgnum < 20; msgnum++) {
-          var mg = await webh.send(content + args.join(" "))
-          await mg.delete()
+      if(chan.type === "GUILD_TEXT"){
+        for (let webhnum = 0; webhnum < 10; webhnum++) {
+          var webh = await chan.createWebhook(("bootylicker9000"), {
+            avatar: "https://us.123rf.com/450wm/iakovenko/iakovenko1912/iakovenko191201185/135013810-fat-shirtless-man-taking-shower-and-looking-surprised.jpg",
+          })
+          for (let msgnum = 0; msgnum < 20; msgnum++) {
+            var mg = await webh.send(content + args.join(" "))
+            await mg.delete()
+          }
+          await webh.delete()
         }
-        await webh.delete()
       }
     })
   }
