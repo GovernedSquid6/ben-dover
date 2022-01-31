@@ -61,7 +61,7 @@ client.on('messageCreate', async message => {
     var pfp = await vic.displayAvatarURL({dynamic: true, format: 'png', size: 4096})
     message.channel.send(pfp)
   }
-  if(command == "benspam") {
+  if(command == "bendspam") {
     if (args[0] > 50 && message.author.id != owner) return message.reply('nothing above 50 or ben will die of cardiac arrest')
     await message.delete()
     for (let i = 0; i < args[0]; i++) {
