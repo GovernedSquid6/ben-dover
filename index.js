@@ -22,7 +22,21 @@ client.on('ready', async () => {
       .setRequired(true));
   const rawData = await data.toJSON();
   commands.push(rawData)
-  console.log(rawData)
+  const commands = [];
+  const data2 = new SlashCommandBuilder()
+    .setName('makesay')
+    .setDescription('Make someone say something')
+    .addUserOption(option => option.setName('victim').setDescription('Who to impersonate').setRequired(true))
+    .addStringOption(option =>
+      option.setName('phrase')
+      .setDescription('What to make them say')
+      .setRequired(true));
+  const rawData2 = await data2.toJSON();
+  commands.push(rawData2)
+  await rest.put(
+    Routes.applicationCommands(client.user.id),
+    { body: commands },
+  );
   await rest.put(
     Routes.applicationCommands(client.user.id),
     { body: commands },
