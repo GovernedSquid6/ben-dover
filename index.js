@@ -5,7 +5,7 @@ const client = new Client({ intents: allIntents });
 const { REST } = require('@discordjs/rest');
 const { Routes } = require('discord-api-types/v9');
 const { SlashCommandBuilder } = require('@discordjs/builders');
-const symbols = require('unicode-13.0.0/Binary_Property/Assigned/symbols.js');
+const symbols = require('@unicode/unicode-13.0.0/Binary_Property/Assigned/symbols.js');
 
 const rest = new REST({ version: '9' }).setToken(process.env.token);
 
