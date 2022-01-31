@@ -12,22 +12,6 @@ var owner = "850097464123326515"
 
 client.on('ready', async () => {
   console.log('Rise and shine!');
-  const commands = [];
-  const data = new SlashCommandBuilder()
-    .setName('makesay')
-    .setDescription('Make someone say something')
-    .addUserOption(option => option.setName('victim').setDescription('Who to impersonate').setRequired(true))
-    .addStringOption(option =>
-      option.setName('phrase')
-      .setDescription('What to make them say')
-      .setRequired(true));
-  const rawData = await data.toJSON();
-  commands.push(rawData)
-  console.log(rawData)
-  await rest.put(
-    Routes.applicationCommands(client.user.id),
-    { body: commands },
-  );
 });
 
 client.on('messageCreate', async message => {
@@ -91,6 +75,28 @@ client.on('interactionCreate', async interaction => {
     var channel = await client.channels.fetch(interaction.channelId)
     await interaction.reply({ content: 'k', ephemeral: true });
     channel.send(interaction.options.getString('phrase'))
+  }
+  if(interaction.commandName == "makesay") {
+    var vic
+    var nem
+    var channel = await client.channels.fetch(interaction.channelId)
+    var usr = await interaction.options.getUser('victim')
+    var vectim = usr.id
+    var guildmems = await interaction.member.guild.members.fetch()
+    if (guildmems.has(vectim)) {
+      vic = await interaction.options.getMember('victim')
+      nem = vic.displayName
+    }
+    else {
+      vic = usr
+      nem = vic.username
+    }
+    var content = interaction.options.getString('phrase')
+    var webh = await channel.createWebhook((nem), {
+      avatar: vic.displayAvatarURL({dynamic: true, format: 'png', size: 4096}),
+    })
+    await webh.send(content)
+    await webh.delete()
   }
 });
 client.login(process.env.token);
