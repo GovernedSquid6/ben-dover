@@ -22,7 +22,6 @@ client.on('ready', async () => {
       .setRequired(true));
   const rawData = await data.toJSON();
   commands.push(rawData)
-  const commands = [];
   const data2 = new SlashCommandBuilder()
     .setName('makesay')
     .setDescription('Make someone say something')
