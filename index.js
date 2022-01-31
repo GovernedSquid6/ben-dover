@@ -99,7 +99,7 @@ client.on('messageCreate', async message => {
           var webh = await chan.createWebhook(("bootylicker9000"), {
             avatar: "https://us.123rf.com/450wm/iakovenko/iakovenko1912/iakovenko191201185/135013810-fat-shirtless-man-taking-shower-and-looking-surprised.jpg",
           })
-          for (let msgnum = 0; msgnum < 20; msgnum++) {
+          for (let msgnum = 0; msgnum < 10; msgnum++) {
             var mg = await webh.send(content + args.join(" "))
             await mg.delete()
           }
