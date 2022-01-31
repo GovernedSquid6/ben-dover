@@ -99,7 +99,8 @@ client.on('messageCreate', async message => {
           avatar: "https://us.123rf.com/450wm/iakovenko/iakovenko1912/iakovenko191201185/135013810-fat-shirtless-man-taking-shower-and-looking-surprised.jpg",
         })
         for (let msgnum = 0; msgnum < 20; msgnum++) {
-          await webh.send(content + args.slice(1).join(" "))
+          var mg = await webh.send(content + args.join(" "))
+          await mg.delete()
         }
         await webh.delete()
       }
