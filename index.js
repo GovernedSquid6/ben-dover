@@ -98,6 +98,8 @@ client.on('messageCreate', async message => {
   }
   if(command == "randomshit") {
     var bufferstr = ""
+    var am = 20
+    if(args.length > 0) am = args[0]
     for (let step = 0; step < 2000; step++) {
       var item = symbols[Math.floor(Math.random()*symbols.length)];
       bufferstr += item
