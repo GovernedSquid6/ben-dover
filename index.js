@@ -1,19 +1,24 @@
 const { Client, Intents } = require('discord.js');
 const allIntents = new Intents(32767);
-
+const fs = require('fs');
 const client = new Client({ intents: allIntents });
 const { REST } = require('@discordjs/rest');
 const { Routes } = require('discord-api-types/v9');
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const symbols = require('@unicode/unicode-13.0.0/Binary_Property/Assigned/symbols.js');
+const commands = [];
+const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
 const rest = new REST({ version: '9' }).setToken(process.env.token);
 
 var owner = "850097464123326515"
 
 client.on('ready', async () => {
-  console.log(symbols);
   console.log('Rise and shine!');
+  for (const file of commandFiles) {
+	  const command = require(`./commands/${file}`);
+	  commands.push(command.data.toJSON());
+  }
   const commands = [];
   const data = new SlashCommandBuilder()
     .setName('bensay')
