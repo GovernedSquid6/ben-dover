@@ -43,7 +43,7 @@ client.on('messageCreate', async message => {
     message.channel.send(pfp)
   }
   if(command == "benspam") {
-    if(!message.member.roles.cache.find(role => role.name === 'DVRCMDS') && message.author.id != owner) return
+    if(!message.member.roles.cache.find(role => role.name === 'DVRCMDs') && message.author.id != owner) return
     if (args[0] > 50 && message.author.id != owner) return message.reply('nothing above 50 or ben will die of cardiac arrest')
     await message.delete()
     for (let i = 0; i < args[0]; i++) {
