@@ -31,6 +31,7 @@ client.on('messageCreate', async message => {
   if(message.author.bot) return
   if(command == "test") message.reply('pp');
   if(command == "oi") message.channel.send('oi');
+  if(command == "f") message.channel.send('f');
   if(command == "bensay") {
     await message.delete()
     message.channel.send(args.join(" "))
