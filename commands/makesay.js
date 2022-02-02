@@ -8,5 +8,5 @@ module.exports = {
     .addStringOption(option =>
       option.setName('phrase')
       .setDescription('What to make them say')
-      .setRequired(true));
+      .setRequired(true))
 };
