@@ -16,33 +16,9 @@ var owner = "850097464123326515"
 client.on('ready', async () => {
   console.log('Rise and shine!');
   for (const file of commandFiles) {
-	  const command = require(`./commands/${file}`);
-	  commands.push(command.data.toJSON());
+    const command = require(`./commands/${file}`);
+    commands.push(command.data.toJSON());
   }
-  const commands = [];
-  const data = new SlashCommandBuilder()
-    .setName('bensay')
-    .setDescription('Make Ben say something')
-    .addStringOption(option =>
-      option.setName('phrase')
-      .setDescription('What to make Ben say')
-      .setRequired(true));
-  const rawData = await data.toJSON();
-  commands.push(rawData)
-  const data2 = new SlashCommandBuilder()
-    .setName('makesay')
-    .setDescription('Make someone say something')
-    .addUserOption(option => option.setName('victim').setDescription('Who to impersonate').setRequired(true))
-    .addStringOption(option =>
-      option.setName('phrase')
-      .setDescription('What to make them say')
-      .setRequired(true));
-  const rawData2 = await data2.toJSON();
-  commands.push(rawData2)
-  await rest.put(
-    Routes.applicationCommands(client.user.id),
-    { body: commands },
-  );
   await rest.put(
     Routes.applicationCommands(client.user.id),
     { body: commands },
@@ -66,7 +42,8 @@ client.on('messageCreate', async message => {
     var pfp = await vic.displayAvatarURL({dynamic: true, format: 'png', size: 4096})
     message.channel.send(pfp)
   }
-  if(command == "bendspam") {
+  if(command == "benspam") {
+    if(!message.member.roles.cache.find(role => role.name === 'DVRCMDS')) return
     if (args[0] > 50 && message.author.id != owner) return message.reply('nothing above 50 or ben will die of cardiac arrest')
     await message.delete()
     for (let i = 0; i < args[0]; i++) {
