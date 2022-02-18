@@ -37,7 +37,7 @@ client.on('messageCreate', async message => {
     message.channel.send(args.join(" "))
   }
   if(command == 'procc") {
-    const arr = message.content.toString().replace(/\r\n/g,'\n').split('\n');
+    const arr = args.join(" ").toString().replace(/\r\n/g,'\n').split('\n');
 
     for(let i of arr) {
         var edi = i.replace(/,[^,]+$/, "")
