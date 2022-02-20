@@ -53,15 +53,6 @@ client.on('messageCreate', async message => {
     await message.delete()
     message.channel.send(args.join(" "))
   }
-  if(command == 'procc") {
-    const arr = args.join(" ").toString().replace(/\r\n/g,'\n').split('\n');
-
-    for(let i of arr) {
-        var edi = i.replace(/,[^,]+$/, "")
-        console.log(edi);
-        message.channel.send(edi)
-    }
-  }
   if(command == "getpfp") {
     var vic
     if(args.length == 0) vic = message.author
