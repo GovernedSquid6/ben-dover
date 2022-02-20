@@ -15,14 +15,14 @@ var owner = "850097464123326515"
 
 client.on('ready', async () => {
   console.log('Rise and shine!');
-  for (const file of commandFiles) {
-    const command = require(`./commands/${file}`);
-    commands.push(command.data.toJSON());
-  }
-  await rest.put(
-    Routes.applicationCommands(client.user.id),
-    { body: commands },
-  );
+  //for (const file of commandFiles) {
+    //const command = require(`./commands/${file}`);
+    //commands.push(command.data.toJSON());
+  //}
+  //await rest.put(
+    //Routes.applicationCommands(client.user.id),
+    //{ body: commands },
+  //);
 });
 
 client.on('messageCreate', async message => {
