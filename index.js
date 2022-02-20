@@ -34,7 +34,10 @@ client.on('messageCreate', async message => {
   if(command == "oi") message.channel.send('oi');
   if(command == "f") message.channel.send('f');
   if(cmd2 == "hut" || cmd2 == "🛖") message.channel.send('alf\'s house');
-  if(cmd2 == "hut homeschool" || cmd2 == "hut home school") message.channel.send('Hut Homeschool for Roadshitters in Argentina, verified to increase your IQ to at least 48.');
+  if(cmd2 == "hut homeschool" || cmd2 == "hut home school") {
+    message.channel.send('Hut Homeschool for Roadshitters in Argentina, verified to increase your IQ to at least 48.')
+    message.channel.send(':hut:')
+  }
   if(cmd2 == "alf") {
     var ran = Math.floor(Math.random() * 101);
     if(ran <= 33) {
