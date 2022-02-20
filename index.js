@@ -15,20 +15,23 @@ var owner = "850097464123326515"
 
 client.on('ready', async () => {
   console.log('Rise and shine!');
-  //for (const file of commandFiles) {
-    //const command = require(`./commands/${file}`);
-    //commands.push(command.data.toJSON());
-  //}
-  //await rest.put(
-    //Routes.applicationCommands(client.user.id),
-    //{ body: commands },
-  //);
+  for (const file of commandFiles) {
+    const command = require(`./commands/${file}`);
+    commands.push(command.data.toJSON());
+  }
+  await rest.put(
+    Routes.applicationCommands(client.user.id),
+    { body: commands },
+  );
 });
 
 client.on('messageCreate', async message => {
   const args = message.content.trim().split(/ +/g);
   const command = args.shift().toLowerCase();
   if(message.author.bot) return
+  if(command == "test") message.reply('pp');
+  if(command == "oi") message.channel.send('oi');
+  if(command == "f") message.channel.send('f');
   if(command == "hut" || command == "�") message.channel.send('alf\'s house');
   if(command == "hut homeschool" || command == "hut home school") message.channel.send('Hut Homeschool for Roadshitters in Argentina, verified to increase your IQ to at least 48.');
   if(command == "alf") {
@@ -46,9 +49,6 @@ client.on('messageCreate', async message => {
       message.channel.send('�')
     }
   }
-  if(command == "test") message.reply('pp');
-  if(command == "oi") message.channel.send('oi');
-  if(command == "f") message.channel.send('f');
   if(command == "bensay") {
     await message.delete()
     message.channel.send(args.join(" "))
