@@ -40,16 +40,20 @@ client.on('messageCreate', async message => {
   }
   if(cmd2 == "alf") {
     var ran = Math.floor(Math.random() * 101);
-    if(ran <= 33) {
+    if(ran <= 25) {
       message.channel.send('lives in a hut')
       message.channel.send(':hut:')
     }
-    else if(ran <= 66) {
+    else if(ran <= 50) {
       message.channel.send('is homeschooled in his hut')
       message.channel.send(':hut:')
     }
-    else {
+    else if(ran <= 75) {
       message.channel.send('is homeschooled by his mother, an armadillo, in his hut')
+      message.channel.send(':hut:')
+    }
+    else {
+      message.channel.send('is a roadshitter')
       message.channel.send(':hut:')
     }
   }
