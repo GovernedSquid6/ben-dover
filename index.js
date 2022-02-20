@@ -31,6 +31,23 @@ client.on('messageCreate', async message => {
   if(message.author.bot) return
   if(command == "test") message.reply('pp');
   if(command == "oi") message.channel.send('oi');
+  if(command == "hut" || command == "�") message.channel.send('alf\'s house');
+  if(command == "hut homeschool" || command == "hut home school") message.channel.send('Hut Homeschool for Roadshitters in Argentina, verified to increase your IQ to at least 48.');
+  if(command == "alf") {
+    var ran = Math.floor(Math.random() * 101);
+    if(ran <= 33) {
+      message.channel.send('lives in a hut')
+      message.channel.send('�')
+    }
+    else if(ran <= 66) {
+      message.channel.send('is homeschooled in his hut')
+      message.channel.send('�')
+    }
+    else {
+      message.channel.send('is homeschooled by his mother, an armadillo, in his hut')
+      message.channel.send('�')
+    }
+  }
   if(command == "f") message.channel.send('f');
   if(command == "bensay") {
     await message.delete()
