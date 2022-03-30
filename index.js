@@ -184,4 +184,4 @@ client.on('interactionCreate', async interaction => {
     await webh.delete()
   }
 });
-client.login(process.env.token);
+client.login(process.env.BOT_TOKEN);
