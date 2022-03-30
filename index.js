@@ -33,6 +33,7 @@ client.on('messageCreate', async message => {
   if(command == "test") message.reply('pp');
   if(command == "oi") message.channel.send('oi');
   if(command == "f") message.channel.send('f');
+  if(cmd2 == "roadshitter") message.channel.send('https://media.discordapp.net/attachments/910371805338947598/958639574710640660/123138482_4029097143771829_1972479008681881469_n.png');
   if(cmd2 == "hut" || cmd2 == "🛖") message.channel.send('alf\'s house');
   if(cmd2 == "hut homeschool" || cmd2 == "hut home school") {
     message.channel.send('Hut Homeschool for Roadshitters in Argentina, verified to increase your IQ to at least 48.')
