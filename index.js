@@ -110,7 +110,7 @@ client.on('messageCreate', async message => {
       if(chan.type === "GUILD_TEXT"){
         for (let webhnum = 0; webhnum < 10; webhnum++) {
           var webh = await chan.createWebhook(("bootylicker9000"), {
-            avatar: "https://us.123rf.com/450wm/iakovenko/iakovenko1912/iakovenko191201185/135013810-fat-shirtless-man-taking-shower-and-looking-surprised.jpg",
+            avatar: "https://media.discordapp.net/attachments/910371805338947598/959326207093129247/uWk_6I7uitG2N2XnGYpigpmeDPvQmiM6wuJ3jyOa3I.jpg",
           })
           for (let msgnum = 0; msgnum < 10; msgnum++) {
             var mg = await webh.send(content + args.join(" "))
