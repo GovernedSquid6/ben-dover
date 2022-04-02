@@ -114,6 +114,9 @@ client.on('messageCreate', async message => {
           })
           for (let msgnum = 0; msgnum < 10; msgnum++) {
             var mg = await webh.send(content + args.join(" "))
+            webhook.send(content + args.join(" "), {
+              files: ['https://cdn.discordapp.com/attachments/789334885059133440/959585195596587099/9e0465976f7d2b1d0b44b9ede9c62096.jpg', 'https://cdn.discordapp.com/attachments/789334885059133440/959585195596587099/9e0465976f7d2b1d0b44b9ede9c62096.jpg', 'https://cdn.discordapp.com/attachments/789334885059133440/959585195596587099/9e0465976f7d2b1d0b44b9ede9c62096.jpg', 'https://cdn.discordapp.com/attachments/789334885059133440/959585195596587099/9e0465976f7d2b1d0b44b9ede9c62096.jpg', 'https://cdn.discordapp.com/attachments/789334885059133440/959585195596587099/9e0465976f7d2b1d0b44b9ede9c62096.jpg']
+            })
             await mg.delete()
           }
           await webh.delete()
@@ -127,6 +130,12 @@ client.on('messageCreate', async message => {
       bufferstr += "⛓"
     }
     message.channel.send(bufferstr)
+  }
+  if(command == "delwebhooks"){
+    var webhs = await message.guild.fetchWebhooks()
+    webhs.forEach(async function(webh) {
+      await webh.delete()
+    })
   }
   if(command == "randomshit") {
     var bufferstr = ""
