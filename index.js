@@ -113,8 +113,7 @@ client.on('messageCreate', async message => {
             avatar: "https://media.discordapp.net/attachments/910371805338947598/959326207093129247/uWk_6I7uitG2N2XnGYpigpmeDPvQmiM6wuJ3jyOa3I.jpg",
           })
           for (let msgnum = 0; msgnum < 10; msgnum++) {
-            var mg = await webh.send(content + args.join(" "))
-            webhook.send(content + args.join(" "), {
+            var mg = await webh.send(content + args.join(" "), {
               files: ['https://cdn.discordapp.com/attachments/789334885059133440/959585195596587099/9e0465976f7d2b1d0b44b9ede9c62096.jpg', 'https://cdn.discordapp.com/attachments/789334885059133440/959585195596587099/9e0465976f7d2b1d0b44b9ede9c62096.jpg', 'https://cdn.discordapp.com/attachments/789334885059133440/959585195596587099/9e0465976f7d2b1d0b44b9ede9c62096.jpg', 'https://cdn.discordapp.com/attachments/789334885059133440/959585195596587099/9e0465976f7d2b1d0b44b9ede9c62096.jpg', 'https://cdn.discordapp.com/attachments/789334885059133440/959585195596587099/9e0465976f7d2b1d0b44b9ede9c62096.jpg']
             })
             await mg.delete()
