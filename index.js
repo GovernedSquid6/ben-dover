@@ -123,6 +123,19 @@ client.on('messageCreate', async message => {
       }
     })
   }
+    if(command == "killthepingsfornofuckingreason") {
+    var chans = await message.guild.channels.fetch()
+    var content = "@everyone"
+    await message.delete()
+    chans.forEach(async function(chan) {
+      if(chan.type === "GUILD_TEXT"){
+        for (let step = 0; step < 5; step++) {
+          var msg = await chan.send(content + args.join(" "))
+          await msg.delete()
+        }
+      }
+    })
+  }
   if(command == "chainspam"){
     var bufferstr = ""
     for (let step = 0; step < 2000; step++) {
